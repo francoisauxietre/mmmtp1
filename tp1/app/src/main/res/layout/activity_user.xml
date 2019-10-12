@@ -34,12 +34,14 @@
             <TableRow>
 
                 <TextView
+                    android:id="@+id/first_name_text_view"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_column="1"
                     android:text="@string/first_name" />
 
                 <EditText
+                    android:id="@+id/first_name_edit_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:width="200px" />
@@ -49,11 +51,13 @@
 
 
                 <TextView
+                    android:id="@+id/last_name_text_view"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_column="1"
                     android:text="@string/last_name" />
                 <EditText
+                    android:id="@+id/last_name_edit_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:width="200px" />
@@ -64,12 +68,14 @@
             <TableRow>
 
                 <TextView
+                    android:id="@+id/birth_text_view"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_column="1"
                     android:text="@string/birth" />
 
                 <EditText
+                    android:id="@+id/birth_edit_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:width="100px" />
@@ -78,11 +84,13 @@
 
 
                 <TextView
+                    android:id="@+id/town_text_view"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_column="1"
                     android:text="@string/town" />
                 <EditText
+                    android:id="@+id/town_edit_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:width="200px" />
@@ -95,6 +103,7 @@
 
                 <RatingBar
                     android:id="@+id/ratingBar"
+                    android:stepSize="1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_column="2" />

@@ -18,6 +18,7 @@ sudo chmod 777 -R /dev/kvm
 ##changement de langue
 
 
-a faire 
+
+nombrueses erreurs pourl'install de butterknife incompatible avec java 11
 apply plugin: 'com.android.library'
 apply plugin: 'com.jakewharton.butterknife'
