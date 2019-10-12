@@ -106,7 +106,7 @@
         <TableRow>
             <TextView
                 android:id="@+id/phone_number_textview"
-                android:layout_width="200dp"
+                android:layout_width="100dp"
                 android:layout_height="20dp"></TextView>
 
             <Button
