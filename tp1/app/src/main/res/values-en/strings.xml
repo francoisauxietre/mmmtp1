@@ -1,0 +1,9 @@
+<resources>
+    <!--    info de base -->
+    <string name="app_name">tp1</string>
+    <string name="action_settings">Settings</string>
+
+    <!--ajoutee pour le tp1-->
+    <string name="user">user</string>
+
+</resources>
