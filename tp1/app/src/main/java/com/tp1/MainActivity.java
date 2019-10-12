@@ -14,6 +14,7 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
     private Button button_user;
+    private Button button_game;
     private Menu menu = null;
 
 
@@ -27,16 +28,6 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-//        FloatingActionButton fab = findViewById(R.id.fab);
-//        fab.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-//                        .setAction("Action", null).show();
-//            }
-//        });
-
-
         this.button_user = findViewById(R.id.button_user);
 
         button_user.setOnClickListener(new View.OnClickListener() {
@@ -47,6 +38,19 @@ public class MainActivity extends AppCompatActivity {
                 finish();
             }
         });
+
+        this.button_game = findViewById(R.id.button_jeu);
+
+        button_game.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent game_intent = new Intent(getApplicationContext(), GameActivity.class);
+                startActivity(game_intent);
+                finish();
+            }
+        });
+
+
     }
 
 

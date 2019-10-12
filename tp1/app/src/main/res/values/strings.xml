@@ -12,11 +12,15 @@
     <string name="birth">birth:</string>
 
 
-<!--     Acitivity-->
+    <!--     Acitivity-->
     <string name="title_activity_user">UserActivity</string>
     <string name="test">test</string>
     <string name="button_validate">validate</string>
     <string name="town">town</string>
     <string name="button_submit">submit</string>
+    <string name="title_activity_jeu">JeuActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
 
 </resources>
