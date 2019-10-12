@@ -12,7 +12,9 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RatingBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class UserActivity extends AppCompatActivity {
 
@@ -26,6 +28,8 @@ public class UserActivity extends AppCompatActivity {
     private EditText first_name_edit_text;
     private EditText last_name_edit_text;
     private EditText town_edit_text;
+    private String final_submit_text;
+    private String final_text;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,18 +37,6 @@ public class UserActivity extends AppCompatActivity {
         setContentView(R.layout.activity_user);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-//        FloatingActionButton fab = findViewById(R.id.fab);
-//        fab.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-//                        .setAction("Action", null).show();
-//            }
-//        });
-//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
-        //ne pas oublier de assigner avec findViewById sinon l'application crach
 
         this.buttonValidate = findViewById(R.id.button_validate);
         this.buttonValidate.setOnClickListener(new View.OnClickListener() {
@@ -75,6 +67,9 @@ public class UserActivity extends AppCompatActivity {
                 town_text = town_edit_text.getText().toString();
                 Log.i("info", town_text);
 
+                final_text = "f_name "+ first_name_text + "\n l_name "+last_name_text+ "\n town "+town_text;
+                Toast.makeText(getApplicationContext(), final_text, Toast.LENGTH_SHORT).show();
+
 
             }
         });
@@ -84,6 +79,11 @@ public class UserActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Log.i("info", "button_submit clicked");
+             RatingBar rating_bar = findViewById(R.id.ratingBar);
+
+                final_submit_text = "submit " + rating_bar.getRating();
+                Toast.makeText(getApplicationContext(),
+                        final_submit_text, Toast.LENGTH_SHORT).show();
             }
         });
     }
