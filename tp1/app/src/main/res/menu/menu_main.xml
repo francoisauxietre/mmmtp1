@@ -7,4 +7,46 @@
         android:orderInCategory="100"
         android:title="@string/action_settings"
         app:showAsAction="never" />
+<!--    <item-->
+<!--        android:id="@+id/action_settings"-->
+<!--        android:orderInCategory="100"-->
+<!--        android:title="@string/action_settings"-->
+<!--        app:showAsAction="never" />-->
+
+<!--    <item-->
+<!--        android:id="@+id/reset_form"-->
+<!--        android:title="reset form"-->
+<!--        android:onClick="reset_form_click"/>-->
+
+<!--    <item-->
+<!--        android:id="@+id/add_phone_number"-->
+<!--        android:title="add phone number"-->
+<!--        android:onClick="add_phone_number_click"/>-->
+
+
+<!--    <item-->
+<!--        android:title="visit_department"-->
+<!--        android:onClick="visit_department_click"-->
+<!--        />-->
+    <item android:id="@+id/reset_form" android:title="Erase data"></item>
+    <item android:id="@+id/add_form" android:title="Erase data"></item>
+
+<!--    <item android:id="@+id/item2" android:titleCondensed="Item 2" -->
+<!--        android:title="Item 2 mais avec un nom assez long quand même">-->
+<!--        <menu>-->
+<!--            <item android:id="@+id/item3" android:title="Item 2.1" android:checkable="true"/>-->
+<!--            <item android:id="@+id/item4" android:title="Item 2.2"/>-->
+<!--        </menu>-->
+<!--    </item>-->
+<!--    <item android:id="@+id/item5" android:title="Item 3" android:checkable="true"/>-->
+<!--    <item android:id="@+id/item6" android:title="Item 4">-->
+<!--        <group android:id="@+id/group1" android:checkableBehavior="all">-->
+<!--            <item android:id="@+id/item7" android:title="Item 4.1"></item>-->
+<!--            <item android:id="@+id/item8" android:title="Item 4.2"></item>-->
+<!--        </group>-->
+<!--    </item>-->
+<!--    <group android:id="@+id/group2" android:enabled="false">-->
+<!--        <item android:id="@+id/item9" android:title="Item 5.1"></item>-->
+<!--        <item android:id="@+id/item10" android:title="Item 5.2"></item>-->
+<!--    </group>-->
 </menu>
