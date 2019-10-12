@@ -9,8 +9,13 @@
     <string name="time">heure</string>
     <string name="first_name">Prénom :</string>
     <string name="last_name">Nom :</string>
+    <string name="birth">date de naissance :</string>
 
     <!--     Acitivity-->
     <string name="title_activity_user">Utilisateur:</string>
+    <string name="test">testfr</string>
+    <string name="button_validate">valider</string>
+    <string name="town">ville</string>
+    <string name="button_submit">soumettre</string>
 
 </resources>

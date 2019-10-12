@@ -8,9 +8,14 @@ import com.google.android.material.snackbar.Snackbar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 
 public class UserActivity extends AppCompatActivity {
+
+    private Button buttonValidate;
+    private Button buttonSubmit;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +33,28 @@ public class UserActivity extends AppCompatActivity {
 //            }
 //        });
 //        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        //ne pas oublier de assigner avec findViewById sinon l'application crach
+
+        this.buttonValidate = findViewById(R.id.button_validate);
+        this.buttonValidate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.i("info", "button_validate clicked");
+            }
+        });
+
+        this.buttonSubmit = findViewById(R.id.button_submit);
+        this.buttonSubmit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.i("info", "button_submit clicked");
+            }
+        });
     }
+
+
+
+
 
 }

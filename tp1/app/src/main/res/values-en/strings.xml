@@ -9,8 +9,13 @@
     <string name="time">time</string>
     <string name="first_name">first name</string>
     <string name="last_name">last name:</string>
+    <string name="birth">birth:</string>
 
     <!--     Acitivity-->
     <string name="title_activity_user">UserActivity</string>
+    <string name="test">test</string>
+    <string name="button_validate">validate</string>
+    <string name="town">town</string>
+    <string name="button_submit">submit</string>
 
 </resources>
