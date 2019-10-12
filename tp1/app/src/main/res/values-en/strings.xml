@@ -3,7 +3,14 @@
     <string name="app_name">tp1</string>
     <string name="action_settings">Settings</string>
 
-    <!--ajoutee pour le tp1-->
+    <!--ajoutee pour le tp1 chmaps de texte de l'appli-->
     <string name="user">user</string>
+    <string name="jeu">jeu</string>
+    <string name="time">time</string>
+    <string name="first_name">first name</string>
+    <string name="last_name">last name:</string>
+
+    <!--     Acitivity-->
+    <string name="title_activity_user">UserActivity</string>
 
 </resources>

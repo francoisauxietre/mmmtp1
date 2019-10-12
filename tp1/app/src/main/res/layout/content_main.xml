@@ -8,23 +8,26 @@
     tools:context=".MainActivity"
     tools:showIn="@layout/activity_main">
 
-    <TextView
+    <Button
+        android:id="@+id/button_user"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
+        android:layout_marginBottom="192dp"
+        android:text="@string/user"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:text="@string/user" />
 
     <Button
-        android:id="@+id/button"
-        android:layout_width="220dp"
-        android:layout_height="139dp"
-        android:layout_marginTop="408dp"
-        android:text="user"
+        android:id="@+id/button_jeu"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/jeu"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="95dp"
-        tools:text="@string/user" />
+        tools:text="@string/jeu" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
