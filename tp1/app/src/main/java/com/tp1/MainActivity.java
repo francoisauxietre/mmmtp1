@@ -1,4 +1,5 @@
 package com.tp1;
+//author Francois auxietre mail.auxietre@gmail.com
 
 import android.content.Intent;
 import android.os.Bundle;

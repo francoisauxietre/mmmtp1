@@ -1,5 +1,6 @@
 package com.tp1;
 
+
 import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -33,6 +34,7 @@ public class UserActivity extends AppCompatActivity {
     private EditText town_edit_text;
     private String final_submit_text;
     private String final_text;
+    private RatingBar rating_bar;
 
     private Menu menu = null;
 
@@ -52,27 +54,27 @@ public class UserActivity extends AppCompatActivity {
 
 
                 //                recuperation des donnees
-                first_name_edit_text = (EditText)findViewById(R.id.first_name_edit_text);
+                first_name_edit_text = (EditText) findViewById(R.id.first_name_edit_text);
                 first_name_text = first_name_edit_text.getText().toString();
                 Log.i("info", first_name_text);
 
                 //                recuperation des donnees
-                last_name_edit_text = (EditText)findViewById(R.id.last_name_edit_text);
+                last_name_edit_text = (EditText) findViewById(R.id.last_name_edit_text);
                 last_name_text = last_name_edit_text.getText().toString();
                 Log.i("info", last_name_text);
 
 //                recuperation des donnees
-                birth_edit_text = (EditText)findViewById(R.id.birth_edit_text);
+                birth_edit_text = (EditText) findViewById(R.id.birth_edit_text);
                 birth_text = birth_edit_text.getText().toString();
                 Log.i("info", birth_text);
 
 
                 //                recuperation des donnees
-                town_edit_text = (EditText)findViewById(R.id.town_edit_text);
+                town_edit_text = (EditText) findViewById(R.id.town_edit_text);
                 town_text = town_edit_text.getText().toString();
                 Log.i("info", town_text);
 
-                final_text = "f_name "+ first_name_text + "\n l_name "+last_name_text+ "\n town "+town_text;
+                final_text = "f_name " + first_name_text + "\n l_name " + last_name_text + "\n town " + town_text;
                 Toast.makeText(getApplicationContext(), final_text, Toast.LENGTH_SHORT).show();
 
 
@@ -84,7 +86,7 @@ public class UserActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Log.i("info", "button_submit clicked");
-             RatingBar rating_bar = findViewById(R.id.ratingBar);
+                rating_bar = findViewById(R.id.ratingBar);
 
                 final_submit_text = "submit " + rating_bar.getRating();
                 Toast.makeText(getApplicationContext(),
@@ -92,8 +94,6 @@ public class UserActivity extends AppCompatActivity {
             }
         });
     }
-
-
 
 
     @Override
@@ -105,12 +105,11 @@ public class UserActivity extends AppCompatActivity {
         super.onCreateOptionsMenu(menu);
         MenuInflater inflater = getMenuInflater();
         //R.menu.menu est l'id de notre menu
-        inflater.inflate(R.menu.menu_main, menu);
+        inflater.inflate(R.menu.menu_user, menu);
 
         // getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
-
 
 
     @Override
@@ -122,7 +121,7 @@ public class UserActivity extends AppCompatActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.action_settings_user) {
             return true;
         }
 
@@ -147,12 +146,14 @@ public class UserActivity extends AppCompatActivity {
         //return super.onOptionsItemSelected(item);
     }
 
-    public void reset_form(MenuItem item) {
+    public void reset_form_click(MenuItem item) {
         Log.i("info", "methode resest form");
-//        ((TextInputLayout)findViewById(R.id.input_nom)).getEditText().setText("");
-//        ((TextInputLayout)findViewById(R.id.input_prenom)).getEditText().setText("");
-//        ((TextInputLayout)findViewById(R.id.input_ville)).getEditText().setText("");
-//        ((EditText)findViewById(R.id.input_dob)).setText("");
+        ((EditText) findViewById(R.id.first_name_edit_text)).setText("");
+        ((EditText) findViewById(R.id.last_name_edit_text)).setText("");
+        ((EditText) findViewById(R.id.birth_edit_text)).setText("");
+        ((EditText) findViewById(R.id.town_edit_text)).setText("");
+        ((RatingBar) findViewById(R.id.ratingBar)).setRating(0);
+
     }
 
 
