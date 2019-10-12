@@ -17,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
     private Button button_user;
     private Button button_game;
     private Menu menu = null;
+    private String number_text="__"; //on passe le numero de telephone vide pour l'instant
 
 
     @Override
@@ -35,6 +36,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent user_activity_intent = new Intent(getApplicationContext(), com.tp1.UserActivity.class);
+                //passage du numero entre deux Activity
+                user_activity_intent.putExtra("PHONE_NUMBER", number_text);
                 startActivity(user_activity_intent);
                 finish();
             }

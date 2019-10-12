@@ -18,6 +18,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.RatingBar;
 import android.widget.TextView;
@@ -27,6 +28,8 @@ public class UserActivity extends AppCompatActivity {
 
     private Button buttonValidate;
     private Button buttonSubmit;
+    private ImageButton buttonPhone;
+
     private String first_name_text;
     private String last_name_text;
     private String town_text;
@@ -35,17 +38,23 @@ public class UserActivity extends AppCompatActivity {
     private EditText first_name_edit_text;
     private EditText last_name_edit_text;
     private EditText town_edit_text;
-    private EditText phone_number;
+    private TextView phone_number_text_view;
     private String final_submit_text;
     private String final_text;
     private RatingBar rating_bar;
 
     private Menu menu = null;
+    private String phone_number_text;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user);
+
+        this.phone_number_text_view = (TextView) findViewById(R.id.phone_number_text_view);
+        this.phone_number_text = getIntent().getStringExtra("PHONE_NUMBER");
+        this.phone_number_text_view.setText(phone_number_text);
+
         Toolbar toolbar2 = findViewById(R.id.toolbar2);
         setSupportActionBar(toolbar2);
 
@@ -97,6 +106,19 @@ public class UserActivity extends AppCompatActivity {
                         final_submit_text, Toast.LENGTH_SHORT).show();
             }
         });
+
+        this.buttonPhone = findViewById(R.id.button_phone);
+        this.buttonPhone.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.i("info", "button_phone clicked");
+                Intent phone_intent = new Intent(getApplicationContext(), PhoneActivity.class);
+                startActivity(phone_intent);
+                finish();
+            }
+        });
+
+
     }
 
 
