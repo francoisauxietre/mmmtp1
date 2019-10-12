@@ -6,4 +6,102 @@
     android:layout_height="match_parent"
     tools:context=".PhoneActivity">
 
+    <TableLayout
+        android:id="@+id/tableLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="100dp">
+        <TableRow>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"></TextView>
+
+        </TableRow>
+    </TableLayout>
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="200dp"
+        android:layout_marginLeft="100dp"
+
+
+        tools:layout_editor_absoluteX="500dp"
+        tools:layout_editor_absoluteY="0dp">
+
+        <TableRow>
+
+            <Button
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:text="@string/numero1"></Button>
+
+            <Button
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:text="@string/numero2"></Button>
+
+            <Button
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:text="@string/numero3"></Button>
+        </TableRow>
+
+        <TableRow>
+
+            <Button
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:text="@string/numero4"></Button>
+
+            <Button
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:text="@string/numero5"></Button>
+
+            <Button
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:text="@string/numero6"></Button>
+        </TableRow>
+
+        <TableRow>
+
+            <Button
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:text="@string/numero7"></Button>
+
+            <Button
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:text="@string/numero8"></Button>
+
+            <Button
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:text="@string/numero9"></Button>
+        </TableRow>
+
+
+
+    </TableLayout>
+
+    <TableLayout
+        android:id="@+id/tableLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="500dp"
+        android:layout_marginLeft="200dp">
+        <TableRow>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"></TextView>
+
+            <Button android:text="@string/delete"></Button>
+        </TableRow>
+    </TableLayout>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

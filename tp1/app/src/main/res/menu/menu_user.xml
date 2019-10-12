@@ -12,6 +12,12 @@
         android:title="reset form"
         android:onClick="reset_form_click"/>
 
+    <item
+        android:id="@+id/add_phone_number"
+        android:title="add phone number"
+        android:onClick="add_phone_number_click"/>
+
+
 
     <item android:id="@+id/add_form" android:title="Erase data"></item>
 

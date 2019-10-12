@@ -17,5 +17,20 @@
     <string name="button_validate">valider</string>
     <string name="town">ville</string>
     <string name="button_submit">soumettre</string>
+    <string name="title_activity_jeu">JeuActivity</string>
+    <string name="title_home">Accueil</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="numero1">1</string>
+    <string name="numero2">2</string>
+    <string name="numero3">3</string>
+    <string name="numero4">4</string>
+    <string name="numero5">5</string>
+    <string name="numero6">6</string>
+    <string name="numero7">7</string>
+    <string name="numero8">8</string>
+    <string name="numero9">9</string>
+    <string name="delete">effacer</string>
+
 
 </resources>

@@ -1,6 +1,8 @@
 package com.tp1;
 
 
+import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -16,6 +18,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -32,6 +35,7 @@ public class UserActivity extends AppCompatActivity {
     private EditText first_name_edit_text;
     private EditText last_name_edit_text;
     private EditText town_edit_text;
+    private EditText phone_number;
     private String final_submit_text;
     private String final_text;
     private RatingBar rating_bar;
@@ -128,12 +132,11 @@ public class UserActivity extends AppCompatActivity {
 
         switch (id) {
             case R.id.reset_form:
-                //Dans le Menu "m", on active tous les items dans le groupe d'identifiant "R.id.group2"
                 menu.setGroupEnabled(R.id.reset_form, true);
                 return true;
 
-            case R.id.add_form:
-                menu.setGroupEnabled(R.id.add_form, true);
+            case R.id.add_phone_number:
+                menu.setGroupEnabled(R.id.add_phone_number, true);
                 return true;
 
             default: {
@@ -156,5 +159,11 @@ public class UserActivity extends AppCompatActivity {
 
     }
 
+    public void add_phone_number_click(MenuItem item) {
+        Log.i("info", "methode app phone number");
 
+        Intent phone_activity_intent = new Intent(getApplicationContext(), com.tp1.PhoneActivity.class);
+        startActivity(phone_activity_intent);
+        finish();
+    }
 }
