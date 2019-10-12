@@ -3,6 +3,7 @@ package com.tp1;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.net.Uri;
 import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -16,11 +17,13 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.RatingBar;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -50,6 +53,13 @@ public class UserActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user);
+
+        Spinner spinner = findViewById(R.id.town_spinner);
+        ArrayAdapter<CharSequence> arrayAdapter = ArrayAdapter.createFromResource(
+                this, R.array.departments_array, android.R.layout.simple_spinner_item);
+arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+spinner.setAdapter(arrayAdapter);
+spinner.setOnItemSelectedListener();
 
         this.phone_number_text_view = (TextView) findViewById(R.id.phone_number_text_view);
         this.phone_number_text = getIntent().getStringExtra("PHONE_NUMBER");
@@ -177,6 +187,8 @@ public class UserActivity extends AppCompatActivity {
         ((EditText) findViewById(R.id.last_name_edit_text)).setText("");
         ((EditText) findViewById(R.id.birth_edit_text)).setText("");
         ((EditText) findViewById(R.id.town_edit_text)).setText("");
+        this.phone_number_text="";
+        this.phone_number_text_view.setText(phone_number_text);
         ((RatingBar) findViewById(R.id.ratingBar)).setRating(0);
 
     }
@@ -187,5 +199,12 @@ public class UserActivity extends AppCompatActivity {
         Intent phone_activity_intent = new Intent(getApplicationContext(), com.tp1.PhoneActivity.class);
         startActivity(phone_activity_intent);
         finish();
+    }
+
+
+    public void visit_department_click(MenuItem item) {
+        //on recupere le departement selectionné et on lance une recherche wikipedia dessus
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://fr.wikipedia.org/wiki/" + (((Spinner) findViewById(R.id.town_spinner)).getSelectedItem().toString())));
+        startActivity(intent);
     }
 }
