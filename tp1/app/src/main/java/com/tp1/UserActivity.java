@@ -8,6 +8,7 @@ import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
+import com.tp1.model.User;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -101,7 +102,12 @@ public class UserActivity extends AppCompatActivity implements AdapterView.OnIte
                 final_text = "f_name " + first_name_text + "\n l_name " + last_name_text + "\n town " + town_text;
                 Toast.makeText(getApplicationContext(), final_text, Toast.LENGTH_SHORT).show();
 
+                Intent information_intent = new Intent(UserActivity.this, InformationActivity.class);
 
+                User user = new User(last_name_text, first_name_text, birth_text, phone_number_text);
+                information_intent.putExtra("user", user);
+
+                startActivity(information_intent);
             }
         });
 
@@ -169,11 +175,7 @@ public class UserActivity extends AppCompatActivity implements AdapterView.OnIte
             default: {
                 throw new IllegalStateException("Inapropriate value please check in mainActivity: " + item.getItemId());
             }
-
         }
-
-
-        //return super.onOptionsItemSelected(item);
     }
 
     public void reset_form_click(MenuItem item) {
@@ -197,23 +199,20 @@ public class UserActivity extends AppCompatActivity implements AdapterView.OnIte
     }
 
 
+    public void web_click(MenuItem item) {
+        //on on fera une recherche sur le nom du departement
 
-public void web_click(MenuItem item){
-    //on on fera une recherche sur le nom du departement
+        String[] departments = ((Spinner) findViewById(R.id.town_spinner)).getSelectedItem().toString().split(",");
 
-    String[] departments = ((Spinner) findViewById(R.id.town_spinner)).getSelectedItem().toString().split(",");
+        String recherche = "http://fr.wikipedia.org/wiki/" + departments[1] + "_(département)";
+        Log.i("info", recherche);
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("" + recherche));
+        startActivity(intent);
 
-    String recherche = "http://fr.wikipedia.org/wiki/"+departments[1]+"_(département)";
-    Log.i("info", recherche);
-    Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("" + recherche));
-    startActivity(intent);
-
-}
-
+    }
 
 
-
-//methodes pour implementations de la selection du spinner
+    //methodes pour implementations de la selection du spinner
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
         String text = parent.getItemAtPosition(position).toString();
