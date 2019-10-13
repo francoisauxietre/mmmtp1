@@ -197,12 +197,23 @@ public class UserActivity extends AppCompatActivity implements AdapterView.OnIte
     }
 
 
-    public void visit_department_click(MenuItem item) {
-        //on recupere le departement selectionné et on lance une recherche wikipedia dessus
-        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://fr.wikipedia.org/wiki/" + (((Spinner) findViewById(R.id.town_spinner)).getSelectedItem().toString())));
-        startActivity(intent);
-    }
 
+public void web_click(MenuItem item){
+    //on on fera une recherche sur le nom du departement
+
+    String[] departments = ((Spinner) findViewById(R.id.town_spinner)).getSelectedItem().toString().split(",");
+
+    String recherche = "http://fr.wikipedia.org/wiki/"+departments[1]+"_(département)";
+    Log.i("info", recherche);
+    Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("" + recherche));
+    startActivity(intent);
+
+}
+
+
+
+
+//methodes pour implementations de la selection du spinner
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
         String text = parent.getItemAtPosition(position).toString();

@@ -1,7 +1,7 @@
 <resources>
     <!--    info de base -->
     <string name="app_name">tp1</string>
-    <string name="action_settings">Settings</string>
+    <string name="action_settings">Parametres</string>
 
     <!--ajoutee pour le tp1 chmaps de texte de l'appli-->
     <string name="user">utilisateur</string>
