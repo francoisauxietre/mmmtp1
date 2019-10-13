@@ -14,50 +14,51 @@
         tools:layout_editor_absoluteX="178dp"
         tools:layout_editor_absoluteY="272dp">
 
+        <TextView
+            android:id="@+id/last_name_information_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-black"
+            android:textColor="@color/colorPrimary"
+            android:textSize="30sp" />
+
+        <TextView
+            android:id="@+id/first_name_information_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-black"
+            android:textColor="@color/colorPrimary"
+            android:textSize="30sp" />
+
+        <TextView
+            android:id="@+id/birth_information_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-black"
+            android:textColor="@color/colorPrimary"
+            android:textSize="30sp" />
+
+        <TextView
+            android:id="@+id/phone_number_information_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-black"
+            android:textColor="@color/colorPrimary"
+            android:textSize="30sp" />
+
+        <TextView
+            android:id="@+id/department_information_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-black"
+            android:textColor="@color/colorAccent"
+            android:textSize="30sp" />
+
         <ImageView
             android:id="@+id/image_information"
             android:layout_width="100dp"
             android:layout_height="100dp" />
 
-        <TextView
-                android:id="@+id/department_information_text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="sans-serif-black"
-                android:textColor="@color/colorAccent"
-                android:textSize="30sp" />
-
-        <TextView
-                android:id="@+id/phone_number_information_text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="sans-serif-black"
-                android:textColor="@color/colorPrimary"
-                android:textSize="30sp" />
-
-        <TextView
-                android:id="@+id/birth_information_text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="sans-serif-black"
-                android:textColor="@color/colorPrimary"
-                android:textSize="30sp" />
-
-        <TextView
-                android:id="@+id/first_name_information_text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="sans-serif-black"
-                android:textColor="@color/colorPrimary"
-                android:textSize="30sp" />
-
-        <TextView
-                android:id="@+id/last_name_information_text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="sans-serif-black"
-                android:textColor="@color/colorPrimary"
-                android:textSize="30sp" />
     </LinearLayout>
 
 

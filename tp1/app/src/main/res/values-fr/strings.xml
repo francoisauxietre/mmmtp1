@@ -32,6 +32,7 @@
     <string name="numero9">9</string>
     <string name="delete">effacer</string>
     <string name="save">sauvegarder</string>
+    <string name="button_save_profile">sauver votre photo</string>
 
 
 </resources>
