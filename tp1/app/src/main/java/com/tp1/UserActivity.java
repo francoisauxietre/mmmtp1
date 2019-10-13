@@ -17,6 +17,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -27,7 +28,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class UserActivity extends AppCompatActivity {
+public class UserActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     private Button buttonValidate;
     private Button buttonSubmit;
@@ -57,9 +58,9 @@ public class UserActivity extends AppCompatActivity {
         Spinner spinner = findViewById(R.id.town_spinner);
         ArrayAdapter<CharSequence> arrayAdapter = ArrayAdapter.createFromResource(
                 this, R.array.departments_array, android.R.layout.simple_spinner_item);
-arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-spinner.setAdapter(arrayAdapter);
-spinner.setOnItemSelectedListener();
+        arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(arrayAdapter);
+        spinner.setOnItemSelectedListener(this);
 
         this.phone_number_text_view = (TextView) findViewById(R.id.phone_number_text_view);
         this.phone_number_text = getIntent().getStringExtra("PHONE_NUMBER");
@@ -133,9 +134,6 @@ spinner.setOnItemSelectedListener();
 
 
     @Override
-    /**
-     *
-     */
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         super.onCreateOptionsMenu(menu);
@@ -149,9 +147,6 @@ spinner.setOnItemSelectedListener();
 
 
     @Override
-    /**
-     *
-     */
     public boolean onOptionsItemSelected(MenuItem item) {
         //les actions sont definies dans les methodes ci dessous et dans le fichier menu_main
         int id = item.getItemId();
@@ -187,7 +182,7 @@ spinner.setOnItemSelectedListener();
         ((EditText) findViewById(R.id.last_name_edit_text)).setText("");
         ((EditText) findViewById(R.id.birth_edit_text)).setText("");
         ((EditText) findViewById(R.id.town_edit_text)).setText("");
-        this.phone_number_text="";
+        this.phone_number_text = "";
         this.phone_number_text_view.setText(phone_number_text);
         ((RatingBar) findViewById(R.id.ratingBar)).setRating(0);
 
@@ -206,5 +201,19 @@ spinner.setOnItemSelectedListener();
         //on recupere le departement selectionné et on lance une recherche wikipedia dessus
         Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://fr.wikipedia.org/wiki/" + (((Spinner) findViewById(R.id.town_spinner)).getSelectedItem().toString())));
         startActivity(intent);
+    }
+
+    @Override
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+        String text = parent.getItemAtPosition(position).toString();
+        Toast.makeText(parent.getContext(), text, Toast.LENGTH_SHORT).show();
+        this.town_text = text;
+        ((EditText) findViewById(R.id.town_edit_text)).setText(text);
+
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> parent) {
+
     }
 }
