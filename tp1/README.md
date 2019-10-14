@@ -22,3 +22,5 @@ sudo chmod 777 -R /dev/kvm
 nombrueses erreurs pourl'install de butterknife incompatible avec java 11
 apply plugin: 'com.android.library'
 apply plugin: 'com.jakewharton.butterknife'
+
+revoir mvvm mvm pour leurs différences

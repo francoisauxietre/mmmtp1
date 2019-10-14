@@ -47,24 +47,22 @@
 
             <TableRow>
 
-                <TextView
-                    android:id="@+id/first_name_text_view"
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/first_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_column="1"
-                    android:fontFamily="sans-serif-black"
-                    android:text="@string/first_name"
+                    android:layout_column="1">
 
-                    android:textAlignment="center"
-                    android:textColor="@color/colorPrimary" />
+                    <com.google.android.material.textfield.TextInputEditText
 
-                <EditText
-                    android:id="@+id/first_name_edit_text"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:hint="@string/first_name"
-                    android:width="200px" />
+
+                        android:id="@+id/first_name_edit_text"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:ems="10"
+                        android:hint="@string/first_name" />
+
+                </com.google.android.material.textfield.TextInputLayout>
             </TableRow>
 
             <TableRow>

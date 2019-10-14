@@ -7,6 +7,7 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.util.Log;
@@ -15,11 +16,17 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import java.io.File;
+
+import static android.provider.MediaStore.Files.FileColumns.MEDIA_TYPE_IMAGE;
+
 public class PhotoActivity extends AppCompatActivity implements View.OnClickListener {
     private ImageView profilImageView;
     private ImageButton buttonCamera;
     private int REQUEST_CAMERA=1;
     private int SELECT_FILES=0;
+    private Uri imageUri;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,7 +71,7 @@ public class PhotoActivity extends AppCompatActivity implements View.OnClickList
             @Override
             public void onClick(DialogInterface dialog, int item) {
                 boolean result =  true;
-
+                Log.i("TAG", "on click");
                 if(items[item].equals("Take photo")){
                     cameraIntent();
                 }
@@ -79,13 +86,29 @@ public class PhotoActivity extends AppCompatActivity implements View.OnClickList
             }
 
         });
+        builder.create();
+        builder.show();
+
     }
+
+
+
+
     private void cameraIntent(){
-        Intent camera_intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-        startActivityForResult(camera_intent, REQUEST_CAMERA);
+//        Intent camera_intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+//        camera_intent.putExtra("android.intent.extras.CAMERA_FACING", 1);
+//        startActivityForResult(camera_intent, REQUEST_CAMERA);
+
+        Uri uriSavedImage=Uri.fromFile(new File("/sdcard/flashCropped.png"));
+        Intent cameraIntent=new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
+        cameraIntent.putExtra(MediaStore.EXTRA_OUTPUT, uriSavedImage);
+        startActivityForResult(cameraIntent, REQUEST_CAMERA);
+
+
     }
 
     private void librayIntent(){
+        Log.i("TAG", "library");
         Intent library_Intent = new Intent();
         library_Intent.setType("images/*");
         library_Intent.setAction(Intent.ACTION_GET_CONTENT);
