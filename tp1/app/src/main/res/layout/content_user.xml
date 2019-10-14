@@ -11,8 +11,8 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
         android:layout_marginTop="20dp"
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -33,9 +33,9 @@
                     android:layout_height="wrap_content"
                     android:layout_column="1"
                     android:fontFamily="sans-serif-black"
+                    android:text="@string/time"
                     android:textAlignment="center"
-                    android:textColor="@color/colorPrimary"
-                    android:text="@string/time" />
+                    android:textColor="@color/colorPrimary" />
 
                 <TextClock
                     android:id="@+id/textClock"
@@ -51,16 +51,19 @@
                     android:id="@+id/first_name_text_view"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="sans-serif-black"
-                    android:textAlignment="center"
-                    android:textColor="@color/colorPrimary"
                     android:layout_column="1"
-                    android:text="@string/first_name" />
+                    android:fontFamily="sans-serif-black"
+                    android:text="@string/first_name"
+
+                    android:textAlignment="center"
+                    android:textColor="@color/colorPrimary" />
 
                 <EditText
                     android:id="@+id/first_name_edit_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="@string/first_name"
                     android:width="200px" />
             </TableRow>
 
@@ -73,9 +76,9 @@
                     android:layout_height="wrap_content"
                     android:layout_column="1"
                     android:fontFamily="sans-serif-black"
+                    android:text="@string/last_name"
                     android:textAlignment="center"
-                    android:textColor="@color/colorPrimary"
-                    android:text="@string/last_name" />
+                    android:textColor="@color/colorPrimary" />
 
                 <EditText
                     android:id="@+id/last_name_edit_text"
@@ -92,11 +95,11 @@
                     android:id="@+id/birth_text_view"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="sans-serif-black"
-                    android:textAlignment="center"
-                    android:textColor="@color/colorPrimary"
                     android:layout_column="1"
-                    android:text="@string/birth" />
+                    android:fontFamily="sans-serif-black"
+                    android:text="@string/birth"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorPrimary" />
 
                 <EditText
                     android:id="@+id/birth_edit_text"
@@ -112,13 +115,13 @@
                     android:id="@+id/town_text_view"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="sans-serif-black"
-                    android:textAlignment="center"
-                    android:textColor="@color/colorPrimary"
                     android:layout_column="1"
-                    android:text="@string/town" />
+                    android:fontFamily="sans-serif-black"
+                    android:text="@string/town"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorPrimary" />
 
-                <EditText
+                <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/town_edit_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -142,6 +145,7 @@
             </TableRow>
 
             <TableRow>
+
                 <ImageButton
                     android:id="@+id/button_phone"
                     android:layout_width="60dp"
@@ -149,38 +153,39 @@
                     android:layout_column="1"
                     android:background="@drawable/icone_phone"
                     android:focusable="true" />
+
+
                 <TextView
                     android:id="@+id/phone_number_text_view"
                     android:layout_width="120dp"
                     android:layout_height="50dp"
                     android:layout_column="2"
                     android:fontFamily="sans-serif-black"
+                    android:text=""
                     android:textAlignment="center"
-                    android:textColor="@color/colorPrimary"
-                    android:text="" />
-
-
-
-
+                    android:textColor="@color/colorPrimary" />
+            </TableRow>
+            <TableRow>
+                <Button
+                    android:id="@+id/button_validate"
+                    android:layout_width="fill_parent"
+                    android:layout_height="60dp"
+                    android:layout_column="1"
+                    android:layout_gravity="bottom"
+                    android:layout_weight="40"
+                    android:text="@string/button_validate" />
+                <Button
+                    android:id="@+id/button_add_photo"
+                    android:layout_width="fill_parent"
+                    android:layout_height="60dp"
+                    android:layout_column="2"
+                    android:layout_gravity="bottom"
+                    android:layout_weight="40"
+                    android:text="@string/add_photo" />
             </TableRow>
         </TableLayout>
 
 
-        <LinearLayout
-            android:layout_width="120dp"
-            android:layout_height="60dp"
-            android:orientation="vertical">
-
-
-            <Button
-                android:id="@+id/button_validate"
-                android:layout_width="fill_parent"
-                android:layout_height="60dp"
-                android:layout_gravity="bottom"
-                android:layout_weight="40"
-                android:text="@string/button_validate" />
-
-        </LinearLayout>
         <Spinner
             android:id="@+id/town_spinner"
             android:layout_width="wrap_content"

@@ -33,5 +33,6 @@
     <string name="delete">delete</string>
     <string name="save">save</string>
     <string name="button_save_profile">save profile</string>
+    <string name="add_photo">add your photo</string>
 
 </resources>

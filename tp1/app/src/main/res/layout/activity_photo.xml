@@ -27,18 +27,18 @@
 
 
             <ImageView
-                android:id="@+id/imageView_profile"
+                android:id="@+id/imageView_profil"
                 android:layout_width="300dp"
                 android:layout_height="300dp"
-                app:srcCompat="@drawable/icone_profile"
+                app:srcCompat="@drawable/icone_profil"
                 tools:layout_editor_absoluteX="200dp"
                 tools:layout_editor_absoluteY="200dp" />
 
             <ImageButton
-                android:id="@+id/imageButton_save_profile"
+                android:id="@+id/imageButton_camera"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:srcCompat="@drawable/camera" />
+                app:srcCompat="@drawable/icone_camera" />
 
         </LinearLayout>
 

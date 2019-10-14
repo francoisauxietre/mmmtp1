@@ -33,6 +33,6 @@
     <string name="delete">effacer</string>
     <string name="save">sauvegarder</string>
     <string name="button_save_profile">sauver votre photo</string>
-
+    <string name="add_photo">ajouter votre photo</string>
 
 </resources>

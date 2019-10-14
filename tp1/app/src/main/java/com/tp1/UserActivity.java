@@ -8,6 +8,7 @@ import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
+import com.google.android.material.textfield.TextInputEditText;
 import com.tp1.model.User;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -34,6 +35,7 @@ public class UserActivity extends AppCompatActivity implements AdapterView.OnIte
     private Button buttonValidate;
     private Button buttonSubmit;
     private ImageButton buttonPhone;
+    private Button buttonAddPhoto;
 
     private String first_name_text;
     private String last_name_text;
@@ -95,7 +97,7 @@ public class UserActivity extends AppCompatActivity implements AdapterView.OnIte
 
 
                 //                recuperation des donnees
-                town_edit_text = (EditText) findViewById(R.id.town_edit_text);
+                town_edit_text = (TextInputEditText) findViewById(R.id.town_edit_text);
                 town_text = town_edit_text.getText().toString();
                 Log.i("info", town_text);
 
@@ -111,6 +113,7 @@ public class UserActivity extends AppCompatActivity implements AdapterView.OnIte
             }
         });
 
+        //bouton submit pour envoyer le nombre d'etoiles
         this.buttonSubmit = findViewById(R.id.button_submit);
         this.buttonSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -124,6 +127,7 @@ public class UserActivity extends AppCompatActivity implements AdapterView.OnIte
             }
         });
 
+        // bouton numero de telephone
         this.buttonPhone = findViewById(R.id.button_phone);
         this.buttonPhone.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -135,7 +139,15 @@ public class UserActivity extends AppCompatActivity implements AdapterView.OnIte
             }
         });
 
-
+        //   bouton pour ajouter une image a son profil
+        this.buttonAddPhoto = findViewById(R.id.button_add_photo);
+        this.buttonAddPhoto.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent photo_intent = new Intent(getApplicationContext(), PhotoActivity.class);
+                startActivity(photo_intent);
+            }
+        });
     }
 
 
