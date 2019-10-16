@@ -13,10 +13,14 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 public class MainActivity extends AppCompatActivity {
     private Button button_user;
     private Button button_game;
-    private Button button_recycler;
+    @BindView(R.id.button_recycler)
+    Button button_recycler;
 
     private Menu menu = null;
     private String number_text="__"; //on passe le numero de telephone vide pour l'instant
@@ -31,6 +35,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        ButterKnife.bind(this);
 
         this.button_user = findViewById(R.id.button_user);
 
@@ -56,7 +62,9 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        this.button_recycler = findViewById(R.id.button_recycler);
+
+//
+//        this.button_recycler = findViewById(R.id.button_recycler);
 
         button_recycler.setOnClickListener(new View.OnClickListener() {
             @Override

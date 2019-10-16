@@ -86,6 +86,9 @@ public class RecyclerActivity extends AppCompatActivity implements View.OnClickL
         super.onActivityResult(requestCode, resultCode, intent);
         Log.i("info", "retour de User Activity");
         Bundle extras = intent.getExtras();
-        mEditText1.setText(extras != null ? extras.getString("returnKey"):"nothing returned");
+
+        User user = intent.getParcelableExtra("user");
+        usersList.add(user);
+        recyclerAdapter.notifyDataSetChanged();
     }
 }
