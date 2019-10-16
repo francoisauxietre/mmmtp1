@@ -13,12 +13,19 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
 
+import com.tp1.api.ApiActivity;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class MainActivity extends AppCompatActivity {
     private Button button_user;
     private Button button_game;
+
+    //nouveau binding avec butterknife
+    @BindView(R.id.button_api)
+    Button button_api;
+
     @BindView(R.id.button_recycler)
     Button button_recycler;
 
@@ -71,6 +78,17 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent recycler_intent = new Intent(getApplicationContext(), RecyclerActivity.class);
                 startActivity(recycler_intent);
+                finish();
+            }
+        });
+
+        //this.button_game = findViewById(R.id.button_jeu);
+
+        button_api.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent api_intent = new Intent(getApplicationContext(), ApiActivity.class);
+                startActivity(api_intent);
                 finish();
             }
         });

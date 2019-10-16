@@ -3,13 +3,33 @@ package com.tp1.model;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import androidx.room.ColumnInfo;
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+
+@Entity(tableName = "user_table") // Entity represents data for a single table row,
+// constructed using an annotated java data object. Each entity is persisted into its own table.
 public class User implements Parcelable {
 
+    @PrimaryKey(autoGenerate = true)
+    private int user_id;
+
+    @ColumnInfo(name = "last_name")
     private String last_name;
+
+    @ColumnInfo(name = "first_name")
     private String first_name;
+
+    @ColumnInfo(name = "birth")
     private String birth;
+
+    @ColumnInfo(name = "phone_number")
     private String phone_number;
+
+    @ColumnInfo(name = "town")
     private String town;
+
+    @ColumnInfo(name = "department")
     private String department;
 
     private int ratingbar;
@@ -62,6 +82,14 @@ public class User implements Parcelable {
         dest.writeString(department);
     }
 
+    public int getUser_id() {
+        return user_id;
+    }
+
+    public void setUser_id(int user_id) {
+        this.user_id = user_id;
+    }
+
     public String getTown() {
         return town;
     }
@@ -76,10 +104,6 @@ public class User implements Parcelable {
 
     public void setImage(int image) {
         this.image = image;
-    }
-
-    public User(String department) {
-        this.department = department;
     }
 
     public void setDepartment(String department) {

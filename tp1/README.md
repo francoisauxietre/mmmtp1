@@ -27,4 +27,6 @@ revoir mvvm mvm pour leurs différences
 
 un content provider sert a partager des donnees entre des applis
 
+pour changer sa version aller dans build.gradle minSdkVersion 24
+
 
