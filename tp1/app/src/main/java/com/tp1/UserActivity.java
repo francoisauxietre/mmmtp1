@@ -30,6 +30,8 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.List;
+
 public class UserActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     private Button buttonValidate;
@@ -41,10 +43,12 @@ public class UserActivity extends AppCompatActivity implements AdapterView.OnIte
     private String last_name_text;
     private String town_text;
     private String birth_text;
+    private  String department_text;
     private EditText birth_edit_text;
     private EditText first_name_edit_text;
     private EditText last_name_edit_text;
     private EditText town_edit_text;
+    private EditText department_edit_text;
     private TextView phone_number_text_view;
     private String final_submit_text;
     private String final_text;
@@ -53,8 +57,13 @@ public class UserActivity extends AppCompatActivity implements AdapterView.OnIte
     private Menu menu = null;
     private String phone_number_text;
 
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user);
 
@@ -96,20 +105,29 @@ public class UserActivity extends AppCompatActivity implements AdapterView.OnIte
                 Log.i("info", birth_text);
 
 
-                //                recuperation des donnees
+                // recuperation des donnees
                 town_edit_text = (TextInputEditText) findViewById(R.id.town_edit_text);
                 town_text = town_edit_text.getText().toString();
                 Log.i("info", town_text);
+
+                department_edit_text  = (EditText) findViewById(R.id.department_edit_text);
+                department_text =  department_edit_text.getText().toString();
+                Log.i("info", department_text);
+
 
                 final_text = "f_name " + first_name_text + "\n l_name " + last_name_text + "\n town " + town_text;
                 Toast.makeText(getApplicationContext(), final_text, Toast.LENGTH_SHORT).show();
 
                 Intent information_intent = new Intent(UserActivity.this, InformationActivity.class);
+                User user = new User(last_name_text, first_name_text, birth_text, phone_number_text, town_text, department_text);
 
-                User user = new User(last_name_text, first_name_text, birth_text, phone_number_text);
+
                 information_intent.putExtra("user", user);
 
-                startActivity(information_intent);
+                setResult(RESULT_OK,information_intent);
+
+                finish();
+                //startActivity(information_intent);
             }
         });
 

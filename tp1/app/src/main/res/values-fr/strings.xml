@@ -34,5 +34,7 @@
     <string name="save">sauvegarder</string>
     <string name="button_save_profile">sauver votre photo</string>
     <string name="add_photo">ajouter votre photo</string>
+    <string name="add_new_client">ajouter un nouveau Client</string>
+    <string name="recycler_view">Liste des clients</string>
 
 </resources>

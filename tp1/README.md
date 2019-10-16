@@ -24,3 +24,7 @@ apply plugin: 'com.android.library'
 apply plugin: 'com.jakewharton.butterknife'
 
 revoir mvvm mvm pour leurs différences
+
+un content provider sert a partager des donnees entre des applis
+
+

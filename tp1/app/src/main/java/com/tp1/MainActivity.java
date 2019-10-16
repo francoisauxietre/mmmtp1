@@ -16,6 +16,8 @@ import android.widget.Button;
 public class MainActivity extends AppCompatActivity {
     private Button button_user;
     private Button button_game;
+    private Button button_recycler;
+
     private Menu menu = null;
     private String number_text="__"; //on passe le numero de telephone vide pour l'instant
 
@@ -54,7 +56,16 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        this.button_recycler = findViewById(R.id.button_recycler);
 
+        button_recycler.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent recycler_intent = new Intent(getApplicationContext(), RecyclerActivity.class);
+                startActivity(recycler_intent);
+                finish();
+            }
+        });
 
 
     }

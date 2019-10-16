@@ -1,12 +1,15 @@
 package com.tp1;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.FileProvider;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
 import android.provider.MediaStore;
 import android.util.Log;
 import android.view.View;
@@ -15,16 +18,17 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import java.io.File;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class PhotoActivity extends AppCompatActivity implements View.OnClickListener {
     private ImageView profilImageView;
     private ImageButton buttonCamera;
+    private int SELECT_FILES=0;
 
     static final int REQUEST_IMAGE_CAPTURE = 1;
-//    private int REQUEST_CAMERA=1;
-    private int SELECT_FILES=0;
-//    private Uri imageUri;
-
+    static final int REQUEST_TAKE_PHOTO = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -94,12 +98,42 @@ public class PhotoActivity extends AppCompatActivity implements View.OnClickList
 
     private void take_picture(){
 
+//TODO hasSystemFeature(PackageManager.FEATURE_CAMERA_ANY) si un appareil n'a pas de camera
+        // a nous de le verifier dans notre code au momnet de prendre une photo
 
         Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
-//            takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, uri);
+  //          takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, uri);
             startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
         }
+
+//        // Ensure that there's a camera activity to handle the intent
+//        if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
+//            // Create the File where the photo should go
+//            File photoFile = null;
+//            try {
+//                photoFile = createImageFile();
+//                Log.i("photo", ""+photoFile);
+//            } catch (IOException ex) {
+//                // Error occurred while creating the File
+//            }
+//            // Continue only if the File was successfully created
+//            if (photoFile != null) {
+//                Uri photoURI = FileProvider.getUriForFile(this,
+//                        "com.tp1.AndoidManifest",
+//                        photoFile);
+//                takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, photoURI);
+//                startActivityForResult(takePictureIntent, REQUEST_TAKE_PHOTO);
+//            }
+//        }
+        Log.i("photo avant", "essai de suaver une photo");
+        File photoFile = null;
+        try {
+                photoFile = createImageFile();
+                Log.i("photo", ""+photoFile);
+            } catch (IOException ex) {
+                // Error occurred while creating the File
+            }
 
 //        Intent camera_intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
 //        camera_intent.putExtra("android.intent.extras.CAMERA_FACING", 1);
@@ -116,6 +150,15 @@ public class PhotoActivity extends AppCompatActivity implements View.OnClickList
 
     }
 
+//    @Override
+//    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+//         if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
+//            Bundle extras = data.getExtras();
+//            Bitmap imageBitmap = (Bitmap) extras.get("data");
+//            imageView.setImageBitmap(imageBitmap);
+//        }
+//    }
+
     private void librayIntent(){
         Log.i("TAG", "library");
         Intent library_Intent = new Intent();
@@ -125,27 +168,23 @@ public class PhotoActivity extends AppCompatActivity implements View.OnClickList
 
     }
 
+    String currentPhotoPath;
+
+    private File createImageFile() throws IOException {
+        // creation de l'image
+        String timeStamp = new SimpleDateFormat("yyyy_MM_dd_HH_mm_ss").format(new Date());
+        String imageFileName = "tp1_" + timeStamp + "_";
+        File storageDir = getExternalFilesDir(Environment.DIRECTORY_PICTURES);
+        File image = File.createTempFile(
+                imageFileName,  /* prefix */
+                ".jpg",         /* suffix */
+                storageDir      /* directory */
+        );
+
+        // Save a file: path for use with ACTION_VIEW intents
+        currentPhotoPath = image.getAbsolutePath();
+        return image;
+    }
+
 }
 
-//public void checkPermission(String permission, int requestCode)
-//{
-//
-//    // Checking if permission is not granted
-//    if (ContextCompat.checkSelfPermission(
-//            MainActivity.this,
-//            permission)
-//        == PackageManager.PERMISSION_DENIED) {
-//        ActivityCompat
-//            .requestPermissions(
-//                MainActivity.this,
-//                new String[] { permission },
-//                requestCode);
-//    }
-//    else {
-//        Toast
-//            .makeText(MainActivity.this,
-//                      "Permission already granted",
-//                      Toast.LENGTH_SHORT)
-//            .show();
-//    }
-//}

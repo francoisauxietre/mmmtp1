@@ -20,6 +20,18 @@
         tools:text="@string/user" />
 
     <Button
+        android:id="@+id/button_recycler"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="352dp"
+        android:text="@string/recycler_view"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:text="@string/recycler_view" />
+
+    <Button
         android:id="@+id/button_jeu"
         android:layout_width="wrap_content"
         android:layout_height="0dp"

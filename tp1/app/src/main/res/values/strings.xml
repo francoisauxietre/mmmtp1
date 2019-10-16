@@ -35,6 +35,7 @@
     <string name="save">save</string>
     <string name="button_save_profile">save profile</string>
     <string name="add_photo">add your photo</string>
-
+    <string name="add_new_client">add a new Client</string>
+    <string name="recycler_view">Clients List</string>
 
 </resources>

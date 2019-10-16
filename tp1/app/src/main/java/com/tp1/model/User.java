@@ -9,14 +9,20 @@ public class User implements Parcelable {
     private String first_name;
     private String birth;
     private String phone_number;
+    private String town;
+    private String department;
+
     private int ratingbar;
     private int image;
 
-    public User(String last_name, String first_name, String birth, String phone_number) {
+
+    public User(String last_name, String first_name, String birth, String phone_number, String town, String department) {
         this.last_name = last_name;
         this.first_name = first_name;
         this.birth = birth;
         this.phone_number = phone_number;
+        this.town = town;
+        this.department = department;
     }
 
     protected User(Parcel in) {
@@ -24,6 +30,8 @@ public class User implements Parcelable {
         first_name = in.readString();
         birth = in.readString();
         phone_number = in.readString();
+        town = in.readString();
+        department = in.readString();
 
     }
 
@@ -50,6 +58,36 @@ public class User implements Parcelable {
         dest.writeString(first_name);
         dest.writeString(birth);
         dest.writeString(phone_number);
+        dest.writeString(town);
+        dest.writeString(department);
+    }
+
+    public String getTown() {
+        return town;
+    }
+
+    public void setTown(String town) {
+        this.town = town;
+    }
+
+    public int getImage() {
+        return image;
+    }
+
+    public void setImage(int image) {
+        this.image = image;
+    }
+
+    public User(String department) {
+        this.department = department;
+    }
+
+    public void setDepartment(String department) {
+        this.department = department;
+    }
+
+    public String getDepartment() {
+        return department;
     }
 
     public String getLast_name() {
