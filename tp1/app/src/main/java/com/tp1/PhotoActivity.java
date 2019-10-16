@@ -1,10 +1,8 @@
 package com.tp1;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.AlertDialog;
-import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
@@ -18,14 +16,14 @@ import android.widget.Toast;
 
 import java.io.File;
 
-import static android.provider.MediaStore.Files.FileColumns.MEDIA_TYPE_IMAGE;
-
 public class PhotoActivity extends AppCompatActivity implements View.OnClickListener {
     private ImageView profilImageView;
     private ImageButton buttonCamera;
-    private int REQUEST_CAMERA=1;
+
+    static final int REQUEST_IMAGE_CAPTURE = 1;
+//    private int REQUEST_CAMERA=1;
     private int SELECT_FILES=0;
-    private Uri imageUri;
+//    private Uri imageUri;
 
 
     @Override
@@ -73,7 +71,7 @@ public class PhotoActivity extends AppCompatActivity implements View.OnClickList
                 boolean result =  true;
                 Log.i("TAG", "on click");
                 if(items[item].equals("Take photo")){
-                    cameraIntent();
+                    take_picture();
                 }
 
                 if(items[item].equals("Chose from library")){
@@ -94,15 +92,26 @@ public class PhotoActivity extends AppCompatActivity implements View.OnClickList
 
 
 
-    private void cameraIntent(){
+    private void take_picture(){
+
+
+        Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
+//            takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, uri);
+            startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
+        }
+
 //        Intent camera_intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
 //        camera_intent.putExtra("android.intent.extras.CAMERA_FACING", 1);
 //        startActivityForResult(camera_intent, REQUEST_CAMERA);
 
-        Uri uriSavedImage=Uri.fromFile(new File("/sdcard/flashCropped.png"));
-        Intent cameraIntent=new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
-        cameraIntent.putExtra(MediaStore.EXTRA_OUTPUT, uriSavedImage);
-        startActivityForResult(cameraIntent, REQUEST_CAMERA);
+//        File file = new File(storage(), "MyFile.jpg");
+//        Uri uri = Uri.fromFile(file);
+//
+//        Uri uriSavedImage=Uri.fromFile(new File("/sdcard/flashCropped.png"));
+//        Intent cameraIntent=new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
+//        cameraIntent.putExtra(MediaStore.EXTRA_OUTPUT, uri);
+//        startActivityForResult(cameraIntent, REQUEST_CAMERA);
 
 
     }
