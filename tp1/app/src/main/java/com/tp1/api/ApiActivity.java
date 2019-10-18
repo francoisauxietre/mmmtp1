@@ -24,24 +24,20 @@ public class ApiActivity extends AppCompatActivity {
 
     private RequestQueue mRequestQueue;
     private StringRequest mStringRequest;
-    private String url = "http://www.mocky.io/v2/597c41390f0000d002f4dbd1";
+    private String url = "http://www.mocky.io/v2/5185415ba171ea3a00704eed";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_api);
-
         btnRequest = (Button) findViewById(R.id.button_request);
 
         btnRequest.setOnClickListener(new View.OnClickListener() {
-                                          @Override
-                                          public void onClick(View v){
-
-                                              sendAndRequestResponse();
-
-                                          }
-                                      }
-
-        );
+            @Override
+            public void onClick(View v) {
+                sendAndRequestResponse();
+            }
+        });
 
     }
 
@@ -49,20 +45,20 @@ public class ApiActivity extends AppCompatActivity {
 
         //RequestQueue initialized
         mRequestQueue = Volley.newRequestQueue(this);
-
+        Log.i("info", "test");
         //String Request initialized
         mStringRequest = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
 
-                Toast.makeText(getApplicationContext(),"Response :" + response.toString(), Toast.LENGTH_LONG).show();//display the response on screen
+                Toast.makeText(getApplicationContext(), "Response :" + response.toString(), Toast.LENGTH_LONG).show();//display the response on screen
 
             }
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
 
-                Log.i(TAG,"Error :" + error.toString());
+                Log.i(TAG, "Error :" + error.toString());
             }
         });
 

@@ -27,11 +27,12 @@ dependencies {
     implementation 'com.google.android.material:material:1.0.0'
 //    ajout pour butterKnife attention ne marche pas avant la (24 )
     implementation 'com.jakewharton:butterknife:10.0.0'
-    annotationProcessor 'com.jakewharton:butterknife-compiler:10.0.0'
+   // annotationProcessor 'com.jakewharton:butterknife-compiler:10.0.0'
 
 //    ajout de volley pour tester mon API de climberzone
     implementation 'com.android.volley:volley:1.1.1'
-
+    //ajout pour debugger database
+    //debugImplementation 'com.amitshekhar.android:debug-db:1.0.4'
 
 // ajout de room
     def room_version = "2.2.0"

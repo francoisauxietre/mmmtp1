@@ -23,11 +23,11 @@ public class MainActivity extends AppCompatActivity {
     private Button button_game;
 
     //nouveau binding avec butterknife
-    @BindView(R.id.button_api)
-    Button button_api;
+   // @BindView(R.id.button_api)
+    private Button button_api;
 
-    @BindView(R.id.button_recycler)
-    Button button_recycler;
+    //@BindView(R.id.button_recycler)
+    private Button button_recycler;
 
     private Menu menu = null;
     private String number_text="__"; //on passe le numero de telephone vide pour l'instant
@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        ButterKnife.bind(this);
+        //ButterKnife.bind(this);
 
         this.button_user = findViewById(R.id.button_user);
 
@@ -71,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 //
-//        this.button_recycler = findViewById(R.id.button_recycler);
+        this.button_recycler = findViewById(R.id.button_recycler);
 
         button_recycler.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -82,7 +82,9 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        //this.button_game = findViewById(R.id.button_jeu);
+        this.button_game = findViewById(R.id.button_jeu);
+
+        this.button_api = findViewById(R.id.button_api);
 
         button_api.setOnClickListener(new View.OnClickListener() {
             @Override

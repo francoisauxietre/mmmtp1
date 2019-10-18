@@ -33,12 +33,13 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.first_name.setText(usersList.get(position).getFirst_name());
-        holder.last_name.setText(usersList.get(position).getLast_name());
-        holder.birth.setText(usersList.get(position).getBirth());
-        holder.town.setText(usersList.get(position).getTown());
-        holder.phone_number.setText(usersList.get(position).getPhone_number());
-        holder.department.setText(usersList.get(position).getDepartment());
+        User currentUser = usersList.get(position);
+        holder.first_name.setText(currentUser.getFirst_name());
+        holder.last_name.setText(currentUser.getLast_name());
+        holder.birth.setText(currentUser.getBirth());
+        holder.town.setText(currentUser.getTown());
+        holder.phone_number.setText(currentUser.getPhone_number());
+        holder.department.setText(currentUser.getDepartment());
     }
 
     @Override
@@ -64,5 +65,15 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
             department = itemView.findViewById(R.id.item_department);
 
         }
+
+
+    }
+    public void setUsersList(List<User> usersList){
+        this.usersList = usersList;
+        notifyDataSetChanged();
+    }
+
+    public User getUserAt(int adapterPosition) {
+        return usersList.get(adapterPosition);
     }
 }
